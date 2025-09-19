@@ -1,0 +1,48 @@
+{
+  "name": "thesis-backend",
+  "version": "1.0.0",
+  "description": "OCR web application for converting book page images to text",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "keywords": [
+    "ocr",
+    "tesseract",
+    "text extraction",
+    "thesis"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "@google-cloud/documentai": "^9.4.0",
+    "bcryptjs": "^3.0.2",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.2",
+    "express": "^5.1.0",
+    "express-rate-limit": "^6.7.0",
+    "form-data": "^4.0.4",
+    "fs": "^0.0.1-security",
+    "git-filter-repo": "^0.0.30",
+    "mongodb": "^6.20.0",
+    "mongoose": "^8.18.1",
+    "multer": "^2.0.2",
+    "node-fetch": "^2.7.0",
+    "path": "^0.12.7",
+    "sharp": "^0.34.3",
+    "tesseract.js": "^6.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JohnMark2004/openark.git"
+  },
+  "bugs": {
+    "url": "https://github.com/JohnMark2004/openark/issues"
+  },
+  "homepage": "https://github.com/JohnMark2004/openark#readme"
+}
