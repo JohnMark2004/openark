@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Librarian Sign In — OpenArk</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body class="auth-page">
+  <div class="auth-card">
+    <a class="back-circle" href="role-select.html" aria-label="Back">←</a>
+    <div class="auth-logo">
+      <div class="circle"><img src="img/logo.jpg" alt="Site Logo"></div>
+      <div style="font-family:'Playfair Display',serif; font-size:22px;">OpenArk</div>
+    </div>
+    <h1 id="lib-auth-title">Librarian Access</h1>
+    <p class="sub" id="lib-auth-sub">Log in with librarian credentials.</p>
+
+    <!-- Login Form (default) -->
+    <form id="librarian-login-form">
+      <div class="auth-field">
+        <label for="lib-login-username">Username</label>
+        <input id="lib-login-username" type="text" placeholder="yourusername" />
+      </div>
+      <div class="auth-field">
+        <label for="lib-login-password">Password</label>
+        <input id="lib-login-password" type="password" placeholder="••••••••" />
+      </div>
+      <div class="auth-field">
+        <label for="lib-login-code">Access Code</label>
+        <input id="lib-login-code" type="password" placeholder="Enter access code" />
+      </div>
+      <div class="actions">
+        <button class="btn btn-primary" type="submit" id="lib-login-submit">Log In</button>
+      </div>
+      <div class="muted" style="margin-top:10px; text-align:center;">
+        <a class="link" href="#" id="lib-link-to-signup">Don't have an account? Sign Up</a>
+        <br />
+        <a class="link" href="#" id="lib-forgot-password-btn">Forgot Password?</a>
+      </div>
+    </form>
+
+    <!-- Signup Form (hidden initially) -->
+    <form id="librarian-signup-form" style="display: none;">
+      <div class="auth-field">
+        <label for="lib-signup-email">Email</label>
+        <input id="lib-signup-email" type="email" placeholder="librarian@example.com" />
+      </div>
+      <div class="auth-field">
+        <label for="lib-signup-username">Username</label>
+        <input id="lib-signup-username" type="text" placeholder="yourusername" />
+      </div>
+      <div class="auth-field">
+        <label for="lib-signup-password">Password</label>
+        <input id="lib-signup-password" type="password" placeholder="••••••••" />
+      </div>
+      <div class="auth-field">
+        <label for="lib-signup-code">Access Code</label>
+        <input id="lib-signup-code" type="password" placeholder="Enter access code" />
+      </div>
+      <div class="actions">
+        <button class="btn btn-primary" type="submit" id="lib-signup-submit">Sign Up</button>
+      </div>
+      <div class="muted" style="margin-top:10px; text-align:center;">
+        <a class="link" href="#" id="lib-link-to-login">Have an account? Log In</a>
+      </div>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+

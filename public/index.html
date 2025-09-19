@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OpenArk: Digital Library Access</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="top-bar-content">
+      <span class="site-name" id="site-username">INSERT THE USERNAME</span>
+      <div class="logout-link">
+        <a href="#" class="auth-link" id="logout-link">LOG OUT</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Header -->
+  <header class="main-header">
+    <div class="header-content">
+      <div class="logo">
+        <div class="logo-circle">
+          <img src="img/logo.jpg" alt="Online Library Logo" class="logo-image">
+        </div>
+      </div>
+      <h1 class="site-title">OpenArk</h1>
+      <h2 class="site-subtitle">Digital Library Access</h2>
+    </div>
+  </header>
+
+  <!-- Navigation -->
+  <nav class="main-nav">
+    <div class="nav-content">
+      <a href="#" class="nav-link">EXPLORE COLLECTIONS</a>
+      <a href="#" class="nav-link active" id="bookmarks-tab">BOOKMARKS</a>
+      <a href="#" class="nav-link" id="convert-upload-tab">CONVERT & UPLOAD</a>
+      <a href="#" class="nav-link">HELP & SUPPORT</a>
+    </div>
+  </nav>
+
+  <!-- Main Content Area -->
+  <main class="main-content">
+    <!-- Search Section with Nature Background -->
+    <section class="search-section" style="display: none;">
+      <div class="search-container">
+        <div class="search-tabs">
+          <button class="search-tab active" id="browse-tab">Browse</button>
+          <button class="search-tab" id="advanced-tab">Advanced Search</button>
+        </div>
+        <div class="search-box">
+          <input type="text" id="search-input" placeholder="Search for books, articles, documents...">
+          <button class="search-btn" id="search-button">SEARCH</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Convert & Upload Content (Hidden by default) -->
+    <section class="convert-upload-content" id="convert-upload-content" style="display: none;">
+      <!-- Upload Section -->
+      <div class="upload-section">
+      <input id="file-input" type="file" accept="image/*,application/pdf" hidden />
+      <label for="file-input" class="file-label">
+         Choose an image or drag & drop here
+      </label>
+      <p class="file-types">Supported: JPG, PNG, GIF, BMP, TIFF</p>
+      <div style="margin:10px 0;">
+        <label style="font-weight:600;">
+          <input type="checkbox" id="enable-summary" checked /> Enable Summary
+        </label>
+      </div>
+      <button id="convert-btn">Convert to Text</button>
+      </div>
+
+    <!-- Status -->
+    <section class="status-section" id="status" hidden>
+      Processing your image...
+    </section>
+
+    <!-- Output -->
+    <section class="output-section" id="conversion-output" hidden>
+      <h2> Converted Text</h2>
+      <div class="text-container">
+        <pre id="converted-text"></pre>
+      </div>
+      <div class="output-actions">
+        <button id="download-txt"> Download .txt</button>
+        <button id="copy-text"> Copy Text</button>
+      </div>
+    </section>
+
+      <!-- Summary Section -->
+    <section class="summary-section" id="summary-output" hidden>
+      <h2> AI Summary</h2>
+      <div class="text-container">
+        <p id="summary-text"></p>
+      </div>
+    </section>
+    </section>
+
+    <!-- Bookmarks Content (Default active) -->
+    <section class="bookmarks-content" id="bookmarks-content">
+      <div class="bookmarks-container">
+        <h2 class="bookmarks-title">My Bookmarks</h2>
+        
+        <!-- Bookmarks Grid (Hidden by default) -->
+        <div class="bookmarks-grid" id="bookmarks-grid" style="display: none;">
+          <!-- Bookmarks will appear here when user bookmarks books -->
+        </div>
+
+        <!-- No Bookmarks Message (Default display) -->
+        <div class="no-bookmarks" id="no-bookmarks">
+          <div class="no-bookmarks-icon">
+            <!-- <img src="img/no-bookmarks-icon.png" alt="No Bookmarks" class="no-bookmarks-image"> -->
+          </div>
+          <h3>No Bookmarks Yet</h3>
+          <p>Start exploring our collection and bookmark your favorite books!</p>
+          <button class="explore-btn">Explore Collections</button>
+        </div>
+      </div>
+    </section>
+
+    
+
+
+    <!-- Help & Support Content (Hidden by default) -->
+    <section class="help-support-content" id="help-support-content" style="display: none;">
+      <div class="help-container">
+        <h2 class="help-title">Help & Support</h2>
+        
+        <!-- Contact Information -->
+        <!-- <div class="contact-section">
+          <h3 class="section-title">Contact Information</h3>
+          <div class="contact-grid">
+            <div class="contact-card">
+              <div class="contact-icon">
+                <img src="img/email-icon.png" alt="Email Icon" class="icon-image">
+              </div>
+              <h4>Email Support</h4>
+              <p>support@onlinelibrary.com</p>
+              <p>We respond within 24 hours</p>
+            </div>
+            <div class="contact-card">
+              <div class="contact-icon">
+                <img src="img/phone-icon.png" alt="Phone Icon" class="icon-image">
+              </div>
+              <h4>Phone Support</h4>
+              <p>+1 (555) 123-4567</p>
+              <p>Mon-Fri: 9AM-6PM EST</p>
+            </div>
+            <div class="contact-card">
+              <div class="contact-icon">
+                <img src="img/chat-icon.png" alt="Chat Icon" class="icon-image">
+              </div>
+              <h4>Live Chat</h4>
+              <p>Available 24/7</p>
+              <p>Click the chat icon below</p>
+            </div>
+          </div>
+        </div> -->
+
+        <!-- Social Media -->
+        <!-- <div class="social-section">
+          <h3 class="section-title">Follow Us</h3>
+          <div class="social-grid">
+            <a href="#" class="social-link facebook">
+              <div class="social-icon">
+                <img src="img/facebook-icon.png" alt="Facebook" class="social-image">
+              </div>
+              <span>Facebook</span>
+            </a>
+            <a href="#" class="social-link twitter">
+              <div class="social-icon">
+                <img src="img/twitter-icon.png" alt="Twitter" class="social-image">
+              </div>
+              <span>Twitter</span>
+            </a>
+            <a href="#" class="social-link instagram">
+              <div class="social-icon">
+                <img src="img/instagram-icon.png" alt="Instagram" class="social-image">
+              </div>
+              <span>Instagram</span>
+            </a>
+            <a href="#" class="social-link linkedin">
+              <div class="social-icon">
+                <img src="img/linkedin-icon.png" alt="LinkedIn" class="social-image">
+              </div>
+              <span>LinkedIn</span>
+            </a>
+            <a href="#" class="social-link youtube">
+              <div class="social-icon">
+                <img src="img/youtube-icon.png" alt="YouTube" class="social-image">
+              </div>
+              <span>YouTube</span>
+            </a>
+            <a href="#" class="social-link github">
+              <div class="social-icon">
+                <img src="img/github-icon.png" alt="GitHub" class="social-image">
+              </div>
+              <span>GitHub</span>
+            </a>
+          </div>
+        </div> -->
+
+        <!-- Tutorial Section -->
+        <div class="tutorial-section">
+          <h3 class="section-title">How to Use This Website</h3>
+          
+          <div class="tutorial-steps">
+            <div class="tutorial-step">
+              <div class="step-number">1</div>
+              <div class="step-content">
+                <h4>Search for Content</h4>
+                <p>Use the search bar on the main page to find books, articles, or documents. You can browse by category or use advanced search for specific criteria.</p>
+                <div class="step-image">
+                  <!-- <img src="img/tutorial-search.png" alt="Search Interface" class="tutorial-image"> -->
+                </div>
+              </div>
+            </div>
+
+            <div class="tutorial-step">
+              <div class="step-number">2</div>
+              <div class="step-content">
+                <h4>Convert & Upload Documents</h4>
+                <p>Click on "Convert & Upload" tab to access the OCR functionality. Upload images or PDFs to convert them into editable text.</p>
+                <div class="step-image">
+                  <!-- <img src="img/tutorial-upload.png" alt="Upload Interface" class="tutorial-image"> -->
+                </div>
+              </div>
+            </div>
+
+            <div class="tutorial-step">
+              <div class="step-number">3</div>
+              <div class="step-content">
+                <h4>Process Your Files</h4>
+                <p>Select your file by clicking "Choose an image" or drag and drop files directly. Supported formats: JPG, PNG, GIF, BMP, TIFF, PDF.</p>
+                <div class="step-image">
+                  <!-- <img src="img/tutorial-processing.png" alt="Processing" class="tutorial-image"> -->
+                </div>
+              </div>
+            </div>
+
+            <div class="tutorial-step">
+              <div class="step-number">4</div>
+              <div class="step-content">
+                <h4>Get Your Results</h4>
+                <p>View the extracted text, download it as a .txt file, or copy it to your clipboard. You'll also get an AI-generated summary of the content.</p>
+                <div class="step-image">
+                  <!-- <img src="img/tutorial-results.png" alt="Results" class="tutorial-image"> -->
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ Section -->
+          <!-- <div class="faq-section">
+            <h4>Frequently Asked Questions</h4>
+            <div class="faq-item">
+              <div class="faq-question"> -->
+                <!-- <img src="img/faq-icon.png" alt="FAQ" class="faq-icon"> -->
+                <!-- What file formats are supported?
+              </div>
+              <div class="faq-answer">We support JPG, PNG, GIF, BMP, TIFF, and PDF files. Maximum file size is 10MB.</div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-question"> -->
+                <!-- <img src="img/faq-icon.png" alt="FAQ" class="faq-icon"> -->
+                <!-- How accurate is the OCR conversion?
+              </div>
+              <div class="faq-answer">Our OCR technology typically achieves 95%+ accuracy on clear, well-lit documents. Quality may vary with image resolution and text clarity.</div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-question"> -->
+                <!-- <img src="img/faq-icon.png" alt="FAQ" class="faq-icon"> -->
+                <!-- Is my data secure?
+              </div>
+              <div class="faq-answer">Yes, all uploaded files are processed securely and automatically deleted after conversion. We don't store your personal documents.</div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-question"> -->
+                <!-- <img src="img/faq-icon.png" alt="FAQ" class="faq-icon"> -->
+                <!-- Can I convert multiple pages at once?
+              </div>
+              <div class="faq-answer">Currently, you can upload one file at a time. For multi-page documents, please upload each page separately.</div>
+            </div> -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lower Content Section -->
+    <section class="lower-content">
+      <div class="explore-grid">
+        <div class="explore-item">
+          <div class="explore-cover">
+            <img src="img/.png" alt="Featured Cover 1" class="explore-image">
+          </div>
+          <div class="explore-info">
+            <h4 class="explore-title">Featured</h4>
+            <button class="like-btn" aria-label="Like">
+               <span class="like-count">0</span>
+            </button>
+          </div>
+        </div>
+        <div class="explore-item">
+          <div class="explore-cover">
+            <img src="img/.jpg" alt="Featured Cover 2" class="explore-image">
+          </div>
+          <div class="explore-info">
+            <h4 class="explore-title">Trending</h4>
+            <button class="like-btn" aria-label="Like">
+               <span class="like-count">0</span>
+            </button>
+          </div>
+        </div>
+        <div class="explore-item">
+          <div class="explore-cover">
+            <img src="img/.png" alt="Featured Cover 3" class="explore-image">
+          </div>
+          <div class="explore-info">
+            <h4 class="explore-title">New</h4>
+            <button class="like-btn" aria-label="Like">
+               <span class="like-count">0</span>
+            </button>
+          </div>
+        </div>
+        <div class="explore-item">
+          <div class="explore-cover">
+            <img src="img/.jpg" alt="Featured Cover 4" class="explore-image">
+          </div>
+          <div class="explore-info">
+            <h4 class="explore-title">View All</h4>
+            <button class="like-btn" aria-label="Like">
+               <span class="like-count">0</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Auth Modal -->
+  <div class="auth-overlay" id="auth-overlay" hidden style="display: none;"></div>
+  <div class="auth-modal" id="auth-modal" hidden style="display: none;">
+    <div class="auth-modal-content">
+      <button class="auth-close" id="auth-close" aria-label="Close">×</button>
+      <h2>Welcome</h2>
+      <p>Please sign up or log in to continue.</p>
+      <form id="auth-form">
+        <label for="auth-email">Email</label>
+        <input type="email" id="auth-email" placeholder="you@example.com" required />
+        <label for="auth-password">Password</label>
+        <input type="password" id="auth-password" placeholder="••••••••" required />
+        <div class="forgot-password">
+          <button type="button" id="forgot-password-btn" class="forgot-password-link">Forgot Password?</button>
+        </div>
+        <div class="auth-actions">
+          <button type="submit" id="auth-login-btn">Log In</button>
+          <button type="button" id="auth-signup-btn">Sign Up</button>
+        </div>
+      </form>
+      <small>This demo performs client-side only authentication for gating UI.</small>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

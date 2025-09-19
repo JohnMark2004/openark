@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sign In — OpenArk</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body class="auth-page">
+  <div class="auth-card">
+    <a class="back-circle" href="role-select.html" aria-label="Back">←</a>
+    <div class="auth-logo">
+      <div class="circle"><img src="img/logo.jpg" alt="Site Logo"></div>
+      <div style="font-family:'Playfair Display',serif; font-size:22px;">OpenArk</div>
+    </div>
+    <h1 id="auth-title">Welcome back</h1>
+    <p class="sub" id="auth-sub">Log in to continue.</p>
+
+    <form id="auth-form">
+      <div class="auth-field" id="field-student-id">
+        <label for="student-id">Student ID</label>
+        <input id="student-id" type="text" placeholder="e.g. 2025-12345" />
+      </div>
+
+      <div class="auth-field" id="field-username">
+        <label for="username">Username</label>
+        <input id="username" type="text" placeholder="yourusername" />
+      </div>
+
+      <div class="auth-field" id="field-course">
+        <label for="course">Course/Strand</label>
+        <input id="course" type="text" placeholder="e.g. BSCS" />
+      </div>  
+
+      <div class="auth-field" id="field-password">
+        <label for="password">Password</label>
+        <input id="password" type="password" placeholder="••••••••" />
+      </div>
+
+      <div class="actions">
+        <button class="btn btn-primary" type="submit" id="auth-submit">Log In</button>
+      </div>
+      <div class="muted" style="margin-top:10px; text-align:center;">
+        <a class="link" href="#" id="forgot-password-btn">Forgot Password?</a>
+      </div>
+    </form>
+    <div class="muted">
+      <a class="link" href="#" id="toggle-auth-mode">Don't have an account? Sign Up</a>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
